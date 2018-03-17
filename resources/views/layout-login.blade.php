@@ -9,7 +9,6 @@
 	{!! Html::script('assets/js/jquery-3.2.1.min.js') !!}
 	{!! Html::script('assets/js/popper.min.js') !!}
 	{!! Html::script('assets/js/bootstrap.min.js') !!}
-	<!-- <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script> -->
 	{!! Html::script('assets/js/all.js') !!}
 	{!! Html::style('css/login.css') !!}
 </head>

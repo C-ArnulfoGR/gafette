@@ -1,12 +1,12 @@
 /*Estilos para el header de la plantilla*/
 body {
-margin: 0;
-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-font-size: 1rem;
-font-weight: 400;
-line-height: 1.5;
-color: #212529;
-background-color: #f7f7f7;
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #f7f7f7;
 }
 
 .navbar {
@@ -42,11 +42,11 @@ background-color: #f7f7f7;
     color: #f1f6ff;
 }
 
-.topbar p > i{
+.topbar p > i {
     margin-right:5px;
 }
 
-.topbar p:last-child{
+.topbar p:last-child {
     text-align:right;
 }
 
@@ -140,14 +140,16 @@ ul.social-network {
     transition: .3s ease-out;
     color: #fff;
 }
+
 a {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
 li {
     list-style-type: none;
 }
+
 .bg-image-full {
     background-position: center center;
     background-repeat: no-repeat;
@@ -156,6 +158,7 @@ li {
     background-size: cover;
     -o-background-size: cover;
 }
+
 .bg-dark {
     background-color: #222!important;
 }
@@ -169,8 +172,8 @@ li {
 /*Estilos para el footer de la plantilla*/
 .footer-wrap {
     background: black;
-    padding-top: 10px;
-    background-size: cover;
+    padding-top: 2.5px;
+    /*background-size: cover;*/
 }
 
 .footer-wrap h3 {
@@ -179,7 +182,7 @@ li {
     font-family: 'Candara';
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
 }
 
 .info {
@@ -195,8 +198,8 @@ li {
     border-top: 2px solid #5f5f5f;
     font-size: 15px;
     color: #b3b3b3;
-    margin-top: 5px;
-    padding-top: 5px;
+    margin-top: 2px;
+    padding-top: 2px;
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 2px;
 }

@@ -60,8 +60,11 @@
                                 <span class="sr-only">Opciones del menú</span>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#"><i class="fas fa-question-circle"></i>  Acerca de...</a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-phone-square"></i> Contactános</a>
+                                <a class="dropdown-item" href="{{ action('AdminController@index') }}"><i class="fas fa-star"></i>  Inicio</a>
+                                <a class="dropdown-item" href="{{ action('AdminController@basic') }}"><i class="fas fa-cog"></i> Configuración Básica</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-globe"></i>  Detalles del sitio</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-user"></i>  Usuarios</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-question-circle"></i>  Otra opción</a>
                             </div>
                         </div>          
                     </div>

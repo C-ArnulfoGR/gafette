@@ -45,11 +45,11 @@
         </nav>
     </div>
 
-    <div class="container" style="margin-top: 100px; margin-bottom: 10%;">
+    <div class="container" style="margin-top: 100px; margin-bottom: 5%;">
         @yield('content')
     </div>
 
-    <div class="fixed-bottom">
+    <div class="">
         <footer class="footer-wrap">
             <div class="container">
                 <div class="row">

@@ -11,12 +11,26 @@
 |
 */
 
-Route::get('/', 'BasicController@index');
+Route::get('/', 'BasicController@index')
+    ->name('index');
+
+Route::get('/about_us', 'BasicController@about_us')
+    ->name('about_us');
+
+Route::get('/contact_us', 'BasicController@contact_us')
+    ->name('contact_us');
+
+Route::get('/admin', 'AdminController@index')
+    ->name('admin.index');
+
+Route::get('/admin/configuracionBasica', 'AdminController@basic')
+    ->name('admin.basic');
+
+Route::post('/admin/configuracionBasica', 'AdminController@store_basic')
+    ->name('admin.basic.store');
+
+// Faltan de Refactorizar
 
 Route::get('/login', function () {
     return view('login');
 });
-
-Route::get('/admin', 'AdminController@index');
-
-Route::get('/admin/configuracionBasica', 'AdminController@basic');

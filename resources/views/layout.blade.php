@@ -21,9 +21,9 @@
                     <!-- social icon-->
                     <div class="col-sm-12">
                         <ul class="social-network">
-                            <li><a class="waves-effect waves-dark" href="@yield('link_fb')"><i class="fab fa-facebook"></i></a></li>
-                            <li><a class="waves-effect waves-dark" href="@yield('link_tw')"><i class="fab fa-twitter"></i></a></li>
-                            <li><a class="waves-effect waves-dark" href="@yield('link_yt')"><i class="fab fa-youtube"></i></a></li>
+                            <li><a class="waves-effect waves-dark" target="_blank" href="@yield('link_fb')"><i class="fab fa-facebook"></i></a></li>
+                            <li><a class="waves-effect waves-dark" target="_blank" href="@yield('link_tw')"><i class="fab fa-twitter"></i></a></li>
+                            <li><a class="waves-effect waves-dark" target="_blank" href="@yield('link_yt')"><i class="fab fa-youtube"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -38,15 +38,15 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Inicio
+                            <a class="nav-link" href="{{ route('index') }}">Inicio
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Acerca de</a>
+                            <a class="nav-link" href="{{ route('about_us') }}">Acerca de</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contactános</a>
+                            <a class="nav-link" href="{{ route('contact_us') }}">Contactános</a>
                         </li>
                     </ul>
                 </div>
@@ -54,11 +54,11 @@
         </nav>
     </div>
 
-    <div class="container" style="margin-top: 100px; margin-bottom: 10%;">
+    <div class="container" style="margin-top: 100px; margin-bottom: 5%;">
         @yield('content')
     </div>
 
-    <div class="fixed-bottom">
+    <div class="">
         <footer class="footer-wrap">
             <div class="container">
                 <div class="row">
@@ -69,8 +69,8 @@
                                 <span class="sr-only">Opciones del menú</span>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#"><i class="fas fa-question-circle"></i>  Acerca de...</a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-phone-square"></i> Contactános</a>
+                                <a class="dropdown-item" href="{{ route('about_us') }}"><i class="fas fa-question-circle"></i>  Acerca de...</a>
+                                <a class="dropdown-item" href="{{ route('contact_us') }}"><i class="fas fa-phone-square"></i> Contactános</a>
                             </div>
                         </div>          
                     </div>

@@ -13,5 +13,22 @@ class Basic extends Model
      */
     protected $table = 'basics_info';
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'sitio',
+        'link_fb',
+        'link_tw',
+        'link_yt',
+        'email',
+        'address',
+        'telephone',
+        'objective',
+        'about_us',
+        'biography',
+    ];
 
 }

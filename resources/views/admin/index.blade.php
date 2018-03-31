@@ -5,7 +5,7 @@
 @section('content')
 <div class="row" style="margin-top: 100px; margin-bottom: 10px;">
     <div class="col-sm-12">
-        <h3 class="display-4">Estimado Administrador</h3>
+        <h1 class="display-4">Estimado Administrador</h1>
         <p class="lead alert alert-primary">
             Bienvenido al panel de adminsitracion, esperamos que antes de comenzar a utilizar este servicio haya
             leido el manual de usuario, del caso contrario lo puede consultar

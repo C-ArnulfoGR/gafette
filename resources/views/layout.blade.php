@@ -11,7 +11,7 @@
     {!! Html::script('assets/js/all.js') !!}
     {!! Html::style('css/layout.css') !!}
 
-    <title>@yield('title') - Gafette</title>
+    <title>@yield('title') - @yield('sitio')</title>
 </head>
 <body>
     <div class="fixed-top">
@@ -21,9 +21,9 @@
                     <!-- social icon-->
                     <div class="col-sm-12">
                         <ul class="social-network">
-                            <li><a class="waves-effect waves-dark" href="#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a class="waves-effect waves-dark" href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a class="waves-effect waves-dark" href="#"><i class="fab fa-youtube"></i></a></li>
+                            <li><a class="waves-effect waves-dark" href="@yield('link_fb')"><i class="fab fa-facebook"></i></a></li>
+                            <li><a class="waves-effect waves-dark" href="@yield('link_tw')"><i class="fab fa-twitter"></i></a></li>
+                            <li><a class="waves-effect waves-dark" href="@yield('link_yt')"><i class="fab fa-youtube"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
         </header>
         <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
             <div class="container">
-                <h4 class="navbar-brand" href="#" style="text-transform: uppercase;"> Gafette</h4>
+                <h4 class="navbar-brand" href="#" style="text-transform: uppercase;"> @yield('sitio')</h4>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

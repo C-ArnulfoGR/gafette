@@ -1,6 +1,11 @@
 @extends('layout')
 
 @section('title', "Inicio")
+@section('sitio', $data->sitio)
+@section('link_fb', $data->link_fb)
+@section('link_tw', $data->link_tw)
+@section('link_yt', $data->link_yt)
+
 
 @section('content')
 <div class="row">

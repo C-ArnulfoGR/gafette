@@ -29,8 +29,16 @@ Route::get('/admin/configuracionBasica', 'AdminController@basic')
 Route::post('/admin/configuracionBasica', 'AdminController@store_basic')
     ->name('admin.basic.store');
 
+Route::post('/fileUpload', 'BasicController@fileUpload')
+    ->name('fileUpload');
+
 // Faltan de Refactorizar
 
 Route::get('/login', function () {
     return view('login');
+});
+
+Route::get('/post/create', function () {
+    $title = 'Publicaciones';
+    return view('post.create', compact('title'));
 });

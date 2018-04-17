@@ -37,6 +37,10 @@
                 <div class="col-md-4">
                     {!! Form::file('image', array('class' => 'image')) !!}
                 </div>
+                <div>
+                    <input type="text" id="title" name="title" placeholder="Titulo">
+                    <textarea name="body" id="body" cols="40" rows="10" placeholder="Escribe el cuerpo de la publicacion..."></textarea>
+                </div>
 
                 <div class="col-md-4">
                     <button type="submit" class="btn btn-success">Create</button>
@@ -46,7 +50,6 @@
             {!! Form::close() !!}
 
         </div>
-        {{--Carga de imagen--}}
 
     </div>
 @endsection

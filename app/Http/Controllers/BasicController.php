@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Basic;
+use App\Post;
 use Illuminate\Http\Request;
 
 class BasicController extends Controller
@@ -10,7 +11,8 @@ class BasicController extends Controller
     public function index()
     {
         $data = Basic::all()->last();
-        return view('index', compact('data'));
+        $posts = Post::all()->last();
+        return view('index', compact('data', 'posts'));
     }
 
     public function about_us()
@@ -29,18 +31,29 @@ class BasicController extends Controller
     {
         $this->validate($request, [
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'title' => 'required',
+            'body' => 'required',
         ]);
 
         $image = $request->file('image');
 
-        $input['imagename'] = date('Y-m-d H:i:s',time()).'.'.$image->getClientOriginalExtension();
-        $destinationPath = public_path('/images');
+        $input['imagename'] = date('Y-m-d H-i-s',time()).'.'.$image->getClientOriginalExtension();
+        $destinationPath = public_path('images');
         $image->move($destinationPath,$input['imagename']);
+
+        //crear post en la base de datos
+        Post::create([
+           'title' => $request['title'],
+            'body' => $request['body'],
+            'image' => $input['imagename'],
+            'author' => null,
+        ]);
+
 
         //$this->postImage->add($input);
         //$this->save();
 
-        return back()->with('success', 'Imagen subida correctamente.');
+        return back()->with('success', 'Publicacion creada correctamente.');
     }
 
 }

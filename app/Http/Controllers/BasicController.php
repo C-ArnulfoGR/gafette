@@ -33,6 +33,7 @@ class BasicController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'title' => 'required',
             'body' => 'required',
+            'author' => 'nullable',
         ]);
 
         $image = $request->file('image');
@@ -42,11 +43,11 @@ class BasicController extends Controller
         $image->move($destinationPath,$input['imagename']);
 
         //crear post en la base de datos
-        Post::create([
+        Post::create([           
            'title' => $request['title'],
-            'body' => $request['body'],
-            'image' => $input['imagename'],
-            'author' => null,
+           'body' => $request['body'],
+           'image' => $input['imagename'],
+           'author' => $request['author'],
         ]);
 
 

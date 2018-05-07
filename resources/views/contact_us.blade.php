@@ -17,7 +17,7 @@
             </p>
             <p>Dejanos tus comentarios rellenando el siguiente formulario</p>
 
-            <form class="form" role="form" autocomplete="off" method="">
+            <form class="form" role="form" autocomplete="off" method="post" action="{{ route('sendMessage') }}">
                 {!! csrf_field() !!}
 
                 <div class="form-group row">
@@ -25,7 +25,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-                        <input class="form-control" type="text" placeholder="Nombre" required="" name="name">
+                        <input class="form-control" type="text" placeholder="Nombre" required="" name="name" id="name">
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-asterisk"></i></span>
                         </div>
@@ -36,7 +36,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fas fa-at"></i> </span>
                         </div>
-                        <input class="form-control" type="email" placeholder="Tu email" required="" name="email">
+                        <input class="form-control" type="email" placeholder="Tu email" required="" name="email" id="email">
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-asterisk"></i></span>
                         </div>
@@ -47,7 +47,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
                         </div>
-                        <input class="form-control" type="text" placeholder="Asunto" required="" name="subject">
+                        <input class="form-control" type="text" placeholder="Asunto" required="" name="subject" id="subject">
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-asterisk"></i></span>
                         </div>
@@ -58,7 +58,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-edit"></i></span>
                         </div>
-                        <textarea class="form-control" rows="4" placeholder="Escriba su mensaje" name="mensage"></textarea>
+                        <textarea class="form-control" rows="4" placeholder="Escriba su mensaje" name="message_body" id="message_body"></textarea>
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-asterisk"></i></span>
                         </div>

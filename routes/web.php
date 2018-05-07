@@ -32,6 +32,9 @@ Route::post('/admin/configuracionBasica', 'AdminController@store_basic')
 Route::post('/fileUpload', 'BasicController@fileUpload')
     ->name('fileUpload');
 
+Route::post('/sendMessage', 'BasicController@sendMessage')
+    ->name('sendMessage');
+
 // Faltan de Refactorizar
 
 Route::get('/login', function () {

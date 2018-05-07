@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Basic;
 use App\Post;
+use App\Message;
 use Illuminate\Http\Request;
 
 class BasicController extends Controller
@@ -50,11 +51,25 @@ class BasicController extends Controller
            'author' => $request['author'],
         ]);
 
-
-        //$this->postImage->add($input);
-        //$this->save();
-
         return back()->with('success', 'Publicacion creada correctamente.');
+    }
+
+    public function sendMessage(Request $request) {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'subject' => 'required',
+            'message_body' => 'required',
+        ]);
+
+        Message::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'subject' => $request['subject'],
+            'message_body' => $request['message_body'],
+        ]);
+
+        return redirect()->route('contact_us');
     }
 
 }

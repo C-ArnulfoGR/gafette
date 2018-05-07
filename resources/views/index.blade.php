@@ -47,7 +47,9 @@
 				<img class="card-img-top" src="/images/{{ $posts->image }}" alt="Card image cap"> 
 			</a>
 			<div class="card-body" style="margin: 0 auto;" style="margin-top: 5px;">
-				<p class="card-text">{{ $posts->body }} lo que hay aqui son pruebas para validar que ponga el texto del post correctamente </p>
+				<p class="card-text"> 
+					{{ $posts->body }} 
+				</p>
 				<a href="#" class="btn btn-success"> Ver más... </a>
 			</div>
 			
@@ -56,14 +58,14 @@
 	
 	<hr>
 	<div class="col-md-4"> <!-- ///card de ejemplo hecho con estilo css y bootstrap-->
-		<div class="container_1">
+		<div class="box">
 			<div class='article'>
 				<img src='/images/{{ $posts->image }}' width='235px' height='135px'>
 				<h2>
 					<span class='badge badge-success'> {{ $posts->title }} </span>
 				</h2>
 				<p class='post-body'>
-					{{ $posts->body }} lo que hay aqui son pruebas para validar que ponga el texto del post correctamente
+					{{ $posts->body }} 
 				</p>
 				<hr class="separate">
 				<a href="#" class="btn btn-success"> <i class="fas fa-eye"></i> Ver más </a>				

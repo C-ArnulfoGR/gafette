@@ -63,9 +63,10 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form action="post" action="{{ url("post/{$post->id}") }}" enctype="multipart/form-data">
+					<form method="POST" action="{!! url('post/edit', $post->id) !!}" enctype="multipart/form-data">
+						<p>Hola {!! $post->id !!}</p>
 
-						{!! method_field('put') !!}
+						@method('PATCH')
 
 						{!! csrf_field() !!}
 
@@ -82,13 +83,13 @@
 						<div class="md-form">
 							<i class="fas fa-file-alt prefix grey-text"></i>
 							<textarea type="text" id="body" name="body" class="form-control md-textarea" rows="1">{{ old('body', $post->body) }}</textarea>
-							<label for="body" class="font-weight-light">Your email</label>
+							<label for="body" class="font-weight-light">Cuerpo de la publicacion</label>
 						</div>
 
 						<div class="md-form">
 							<i class="fas fa-user prefix grey-text"></i>
 							<input type="text" id="author" name="author" class="form-control" value="{{ old('author', $post->author) }}">
-							<label for="body" class="font-weight-light">Your email</label>
+							<label for="body" class="font-weight-light">Autor</label>
 						</div>
 
 						<div class="text-center py-4 mt-3">

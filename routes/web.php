@@ -42,7 +42,8 @@ Route::get('/login', 'AdminController@login')
 Route::get('/post/postslist', 'AdminController@showPosts')
     ->name('post.postslist');
 
-Route::put('/post/{post}', 'BasicController@updatePost');
+Route::patch('/post/edit/{post}', 'BasicController@updatePost')
+    ->name('post.edit');
 
 // Faltan de Refactorizars
 Route::get('/post/create', function () {

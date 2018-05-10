@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Basic;
+use App\Post;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -10,7 +11,6 @@ class AdminController extends Controller
     public function index()
     {
         $title = 'Panel de Administracion';
-
         return view('admin.index', compact('title'));
     }
 
@@ -36,6 +36,7 @@ class AdminController extends Controller
             'about_us' => 'required',
             'biography' => 'required',
         ]);
+        
         Basic::create([
             'sitio' => $data['sitio'],
             'link_fb' => $data['link_fb'],
@@ -50,5 +51,18 @@ class AdminController extends Controller
         ]);
 
         return redirect()->route('admin.basic');
+    }
+
+    public function login()
+    {
+        $data = Basic::all()->last();
+        return view('login', compact('data'));
+    }
+
+    public function showPosts()
+    {
+        $title = 'Publicaciones';
+        $posts = Post::paginate(5);
+        return view('post.postslist', compact('title', 'posts'));
     }
 }

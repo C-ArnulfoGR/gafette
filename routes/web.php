@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', 'BasicController@index')
     ->name('index');
 
@@ -35,12 +36,15 @@ Route::post('/fileUpload', 'BasicController@fileUpload')
 Route::post('/sendMessage', 'BasicController@sendMessage')
     ->name('sendMessage');
 
-// Faltan de Refactorizar
+Route::get('/login', 'AdminController@login')
+    ->name('login');
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/post/postslist', 'AdminController@showPosts')
+    ->name('post.postslist');
 
+Route::put('/post/{post}', 'BasicController@updatePost');
+
+// Faltan de Refactorizars
 Route::get('/post/create', function () {
     $title = 'Publicaciones';
     return view('post.create', compact('title'));

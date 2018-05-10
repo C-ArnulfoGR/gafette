@@ -12,7 +12,7 @@ class BasicController extends Controller
     public function index()
     {
         $data = Basic::all()->last();
-        $posts = Post::all()->last();
+        $posts = Post::all();
         return view('index', compact('data', 'posts'));
     }
 
@@ -54,6 +54,20 @@ class BasicController extends Controller
         return back()->with('success', 'Publicacion creada correctamente.');
     }
 
+    public function updatePost(Post $post) 
+    {
+        $data = request()->validate([
+            'image' => 'required',
+            'title' => 'required',
+            'body' => 'required',
+            'author' => 'nullable',
+        ]);
+
+        $post->update($data);
+
+        return redirect()->route('post.postslist', ['post' => $post]);
+    }
+
     public function sendMessage(Request $request) {
         $this->validate($request, [
             'name' => 'required',
@@ -72,4 +86,5 @@ class BasicController extends Controller
         return redirect()->route('contact_us');
     }
 
+    
 }

@@ -25,10 +25,9 @@
                 <p>Asegurate de completar todos los campos obligatorios</p>
             </div>
         @endif
-
-
     </div>
 </div>
+
 <div class="row">
     <div class="col-sm-6">
         <div class="card card-outline-secondary">
@@ -163,10 +162,10 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-lg-3 col-form-label form-control-label"></label>
-                        <div class="col-lg-9">
+                        <div class="col-md-5"></div>
+                        <div class="btn-group">
                             <button type="submit" class="btn btn-primary"> Guardar <i class="fas fa-save"></i></i></button>
-                            <button type="reset" class="btn btn-secondary"> Cancelar <i class="fas fa-times"></i></button>
+                            <button type="reset" class="btn btn-dark"> Cancelar <i class="fas fa-times"></i></button>
                         </div>
                     </div>
                 </form>

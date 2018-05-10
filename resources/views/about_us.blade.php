@@ -9,7 +9,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col col-sm-12">
             <h1 class="display-3">Acerca de {{ $data->sitio }}</h1>
             <hr>
             <h2 class="display-4">Quienes somos</h2>

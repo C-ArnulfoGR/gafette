@@ -20,7 +20,6 @@ class CreateAccountTypesTable extends Migration
             $table->boolean('can_answer_msg');
             $table->boolean('can_edit_page');
             $table->boolean('can_manage_users');
-
         });
     }
 

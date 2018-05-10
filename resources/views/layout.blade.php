@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     {!! Html::style('assets/css/fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome.css') !!}
-    {!! Html::style('assets/css/bootstrap.min.css') !!}
+    {!! Html::style('assets/css/MDB/css/bootstrap.min.css') !!}
+    {!! Html::style('assets/css/MDB/css/mdb.min.css') !!}
     {!! Html::script('assets/js/jquery-3.2.1.min.js') !!}
     {!! Html::script('assets/js/popper.min.js') !!}
     {!! Html::script('assets/js/bootstrap.min.js') !!}
+    {!! Html::script('assets/css/MDB/js/mdb.min.js') !!}
     {!! Html::script('assets/js/all.js') !!}
     {!! Html::style('css/layout.css') !!}
 
     <title>@yield('title') - @yield('sitio')</title>
 </head>
 <body>
+
     <div class="fixed-top">
         <header class="topbar">
             <div class="container">
@@ -64,8 +67,8 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-6">
                         <div class="btn-group dropup">
-                            <button type="button" class="btn btn-secondary">Enlaces rápidos</button>
-                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn btn-dark">Enlaces rápidos</button>
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="sr-only">Opciones del menú</span>
                             </button>
                             <div class="dropdown-menu">
@@ -77,8 +80,8 @@
                     <div class="col-md-4 col-sm-6"></div>
                     <div class="col-md-4 col-sm-6">
                         <div class="btn-group dropup">
-                            <button type="button" class="btn btn-secondary">Desarrolladores de la página</button>
-                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn btn-dark">Diseñadores del sitio</button>
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="sr-only">Opciones del menú</span>
                             </button>
                             <div class="dropdown-menu">

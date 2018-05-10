@@ -24,5 +24,5 @@ class Message extends Model
         'subject',
         'message_body',
     ];
-
+    
 }

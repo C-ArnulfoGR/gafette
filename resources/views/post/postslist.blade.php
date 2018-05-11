@@ -39,7 +39,7 @@
 							<td> {{ substr($post->body, 0, 50) }} </td>
 							<td align="center"> 
 								<button type="button" class="btn btn-outline-success waves-effect btn-sm my-0" data-toggle="modal" data-target="#modalPostEditForm{{ $post->id }}"> <i class="fas fa-edit"></i> Editar </button>
-								<button type="button" class="btn btn-outline-danger waves-effect btn-sm my-0"> <i class="fas fa-times"></i> Eliminar</button>
+								<a href="{!! url('post/delete', $post->id) !!}" class="btn btn-outline-danger waves-effect btn-sm my-0" onclick="return confirm('Desea eliminar al usuario?')"> <i class="fas fa-times"></i> Eliminar</a>
 							</td>
 						</tr>
 						@endforeach

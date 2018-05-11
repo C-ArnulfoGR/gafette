@@ -45,6 +45,9 @@ Route::get('/post/postslist', 'AdminController@showPosts')
 Route::patch('/post/edit/{post}', 'BasicController@updatePost')
     ->name('post.edit');
 
+Route::get('/post/delete/{post}', 'AdminController@deletePost')
+    ->name('post.delete');
+
 // Faltan de Refactorizars
 Route::get('/post/create', function () {
     $title = 'Publicaciones';

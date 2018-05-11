@@ -62,7 +62,16 @@ class AdminController extends Controller
     public function showPosts()
     {
         $title = 'Publicaciones';
-        $posts = Post::paginate(5);
+        $posts = Post::where('active', true)->paginate(5);
         return view('post.postslist', compact('title', 'posts'));
     }
+
+    public function deletePost(Post $post)
+    {
+        $post->update([
+            'active' => '0',
+        ]);
+        return redirect()->route('post.postslist', ['post' => $post]);
+    }
+
 }

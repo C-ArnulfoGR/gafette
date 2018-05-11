@@ -12,7 +12,7 @@ class BasicController extends Controller
     public function index()
     {
         $data = Basic::all()->last();
-        $posts = Post::all();
+        $posts = Post::where('active', true)->paginate(12);
         return view('index', compact('data', 'posts'));
     }
 

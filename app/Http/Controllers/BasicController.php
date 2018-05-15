@@ -56,7 +56,7 @@ class BasicController extends Controller
         return back()->with('success', 'Publicacion creada correctamente.');
     }
 
-    public function updatePost(Post $post) 
+    public function updatePost(Post $post)
     {
         $data = request()->validate([
             'image' => 'required',

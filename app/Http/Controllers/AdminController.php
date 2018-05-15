@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Role;
 use App\Basic;
 use App\Post;
 use App\Message;
@@ -9,6 +11,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+
     public function index()
     {
         $title = 'Panel de Administracion';

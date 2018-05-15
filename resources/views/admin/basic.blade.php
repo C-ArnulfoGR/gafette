@@ -35,7 +35,7 @@
                 <h4 class="mb-0">Agregar datos para la configuracion del sitio</h4>
             </div>
             <div class="card-body">
-                <form class="form" role="form" autocomplete="off" method="post" action="{{ route('admin.basic.store') }}">
+                <form class="form" role="form" autocomplete="off" method="POST" action="{{ route('admin.basic.store') }}">
                     {!! csrf_field() !!}
 
                     <div class="form-group row">

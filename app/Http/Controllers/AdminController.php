@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Basic;
 use App\Post;
+use App\Message;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -72,6 +73,13 @@ class AdminController extends Controller
             'active' => '0',
         ]);
         return redirect()->route('post.postslist', ['post' => $post]);
+    }
+
+    public function showMessages()
+    {
+        $title = 'Buzon';
+        $messages = Message::paginate(10);
+        return view('mailbox.messageslist', compact('title', 'messages'));
     }
 
 }

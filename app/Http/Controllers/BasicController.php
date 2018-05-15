@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Basic;
 use App\Post;
 use App\Message;
+use App\AnswerMessages;
 use Illuminate\Http\Request;
 
 class BasicController extends Controller
@@ -49,6 +50,7 @@ class BasicController extends Controller
            'body' => $request['body'],
            'image' => $input['imagename'],
            'author' => $request['author'],
+           'active' => true,
         ]);
 
         return back()->with('success', 'Publicacion creada correctamente.');
@@ -68,7 +70,8 @@ class BasicController extends Controller
         return redirect()->route('post.postslist', ['post' => $post]);
     }
 
-    public function sendMessage(Request $request) {
+    public function sendMessage(Request $request) 
+    {
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email',
@@ -86,5 +89,21 @@ class BasicController extends Controller
         return redirect()->route('contact_us');
     }
 
+    public function answerMessage(Request $request) 
+    {
+        $this->validate($request, [
+            'community_email' => 'required|email',
+            'answer_body' => 'required',
+            'message_id' => 'required',
+        ]);
+
+        AnswerMessages::create([
+            'community_email' => $request['community_email'],
+            'answer_body' => $request['answer_body'],
+            'message_id' => $request['message_id'],
+        ]);
+
+        return redirect()->route('mailbox.messageslist');
+    }
     
 }

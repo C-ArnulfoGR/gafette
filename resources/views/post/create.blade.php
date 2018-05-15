@@ -22,7 +22,6 @@
             @if(count($errors)>0)
                 <div class="alert alert-danger">
                     <strong>Whooops!</strong>There were some problems with your input. <br>
-
                     <ul>
                         @foreach($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -65,7 +64,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-file-alt"></i></span>
                                 </div>
-                                <textarea class="form-control" rows="4" placeholder="Descripción detallada del post" id="body" name="body">lol</textarea>
+                                <textarea class="form-control" rows="4" placeholder="Descripción detallada del post" required="" id="body" name="body"></textarea>
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fas fa-asterisk"></i></span>
                                 </div>

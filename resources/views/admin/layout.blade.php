@@ -11,7 +11,25 @@
     {!! Html::script('assets/js/bootstrap.min.js') !!}
     {!! Html::script('assets/css/MDB/js/mdb.min.js') !!}
     {!! Html::script('assets/js/all.js') !!}
+    {!! Html::script('assets/js/sweetalert.js') !!}
     {!! Html::style('css/layout.css') !!}
+
+    <script type="text/javascript">
+        function deleteConfirmPost(post_id) {
+            swal({
+                title: "De verdad deseas eliminar este post?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if(willDelete) {
+                    location.href = "{!! url('/post/delete/{post}') !!}".replace("{post}", post_id);
+                    swal("Exito!", "Post eliminado!", "success")
+                }
+            });
+        }
+    </script>
 
     <title>@yield('title') - Gafette</title>
 </head>
@@ -40,7 +58,7 @@
                             <a class="nav-link" href="#">Usuarios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Buzón</a>
+                            <a class="nav-link" href="{{ action('AdminController@showMessages') }}">Buzón</a>
                         </li>
                     </ul>
                 </div>
@@ -65,9 +83,9 @@
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ action('AdminController@index') }}"><i class="fas fa-star"></i>  Inicio</a>
                                 <a class="dropdown-item" href="{{ action('AdminController@basic') }}"><i class="fas fa-cog"></i> Configuración Básica</a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-globe"></i>  Detalles del sitio</a>
+                                <a class="dropdown-item" href="{{ action('AdminController@showPosts') }}"><i class="fas fa-globe"></i>  Publicaciones</a>
                                 <a class="dropdown-item" href="#"><i class="fas fa-user"></i>  Usuarios</a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-question-circle"></i>  Otra opción</a>
+                                <a class="dropdown-item" href="{{ action('AdminController@showMessages') }}"><i class="fas fa-question-circle"></i>  Buzón</a>
                             </div>
                         </div>          
                     </div>

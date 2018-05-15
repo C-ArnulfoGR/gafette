@@ -34,12 +34,12 @@
 					<tbody>
 						@foreach($posts as $post)
 						<tr>
-							<th scope="row"> {{ $post->id }} </th>
+							<td scope="row"> {{ $post->id }} </td>
 							<td> {{ $post->title }} </td>
 							<td> {{ substr($post->body, 0, 50) }} </td>
 							<td align="center"> 
 								<button type="button" class="btn btn-outline-success waves-effect btn-sm my-0" data-toggle="modal" data-target="#modalPostEditForm{{ $post->id }}"> <i class="fas fa-edit"></i> Editar </button>
-								<a href="{!! url('post/delete', $post->id) !!}" class="btn btn-outline-danger waves-effect btn-sm my-0" onclick="return confirm('Desea eliminar al usuario?')"> <i class="fas fa-times"></i> Eliminar</a>
+								<button class="btn btn-outline-danger waves-effect btn-sm my-0" onclick="return deleteConfirmPost('{{ $post->id }}')"> <i class="fas fa-times"></i> Eliminar</button>
 							</td>
 						</tr>
 						@endforeach
@@ -63,33 +63,33 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="{!! url('post/edit', $post->id) !!}" enctype="multipart/form-data">
-						<p>Hola {!! $post->id !!}</p>
-
+					<form role="form" autocomplete="off" method="POST" action="{!! url('post/edit', $post->id) !!}" enctype="multipart/form-data">
 						@method('PATCH')
 
 						{!! csrf_field() !!}
 
 						<img id="image" name="image" src="/images/{{ old('image', $post->image) }}" alt="placeholder" class="img-thumbnail mx-auto d-block">
-
-						<input type="hidden" name="image" value="{{ old('image', $post->image) }}">
+						
+						<div class="md-form">
+							<input type="hidden" id="image" name="image" value="{{ old('image', $post->image) }}">
+						</div>
 
 						<div class="md-form">
 							<i class="fas fa-font prefix grey-text"></i>
 							<input type="text" id="title" name="title" class="form-control" value="{{ old('title', $post->title) }}">
-							<label for="title" class="font-weight-light">Titulo del post</label>
+							{{-- <label for="title" class="font-weight-light">Titulo del post</label> --}}
 						</div>
 
 						<div class="md-form">
 							<i class="fas fa-file-alt prefix grey-text"></i>
 							<textarea type="text" id="body" name="body" class="form-control md-textarea" rows="1">{{ old('body', $post->body) }}</textarea>
-							<label for="body" class="font-weight-light">Cuerpo de la publicacion</label>
+							{{-- <label for="body" class="font-weight-light">Cuerpo de la publicacion</label> --}}
 						</div>
 
 						<div class="md-form">
 							<i class="fas fa-user prefix grey-text"></i>
 							<input type="text" id="author" name="author" class="form-control" value="{{ old('author', $post->author) }}">
-							<label for="body" class="font-weight-light">Autor</label>
+							{{-- <label for="body" class="font-weight-light">Autor</label> --}}
 						</div>
 
 						<div class="text-center py-4 mt-3">

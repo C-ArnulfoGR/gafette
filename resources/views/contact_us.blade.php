@@ -17,7 +17,7 @@
             </p>
             <p>Dejanos tus comentarios rellenando el siguiente formulario</p>
 
-            <form class="form" role="form" autocomplete="off" method="post" action="{{ route('sendMessage') }}">
+            <form class="form" role="form" autocomplete="off" method="POST" action="{{ route('sendMessage') }}">
                 {!! csrf_field() !!}
 
                 <div class="form-group row">

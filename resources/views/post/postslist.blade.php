@@ -10,7 +10,7 @@
 		<div class="card border-dark mb-3" style="max-width: 18rem;">
 			<div class="card-header text-center"> Para nuevas publicaciones </div>
 			<div class="card-body text-dark text-center">
-				<a class="btn btn-primary" href="{{ url('/post/create') }}"> <i class="fas fa-check"></i> Crear Post </a>
+				<a class="btn btn-outline-primary waves-effect btn-sm my-0" href="{{ url('/post/create') }}"> <i class="fas fa-check"></i> Crear post</a>
 			</div>
 		</div>
 	</div>

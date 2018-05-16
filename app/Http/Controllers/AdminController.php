@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Basic;
 use App\Post;
 use App\Message;
+use App\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -73,6 +74,13 @@ class AdminController extends Controller
             'active' => '0',
         ]);
         return redirect()->route('post.postslist', ['post' => $post]);
+    }
+
+    public function showUsers(User $users) 
+    {
+        $title = 'Usuarios';
+        $users = User::paginate(5);
+        return view('user.userslist', compact('title', 'users'));
     }
 
     public function showMessages()

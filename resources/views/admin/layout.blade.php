@@ -44,9 +44,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ action('AdminController@index') }}">Inicio
-                                <span class="sr-only">(current)</span>
-                            </a>
+                            <a class="nav-link" href="{{ action('AdminController@index') }}">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ action('AdminController@basic') }}">Configuracion Basica</a>
@@ -55,7 +53,7 @@
                             <a class="nav-link" href="{{ action('AdminController@showPosts') }}">Publicaciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Usuarios</a>
+                            <a class="nav-link" href="{{ action('AdminController@showUsers') }}">Usuarios</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ action('AdminController@showMessages') }}">Buzón</a>
@@ -84,7 +82,7 @@
                                 <a class="dropdown-item" href="{{ action('AdminController@index') }}"><i class="fas fa-star"></i>  Inicio</a>
                                 <a class="dropdown-item" href="{{ action('AdminController@basic') }}"><i class="fas fa-cog"></i> Configuración Básica</a>
                                 <a class="dropdown-item" href="{{ action('AdminController@showPosts') }}"><i class="fas fa-globe"></i>  Publicaciones</a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-user"></i>  Usuarios</a>
+                                <a class="dropdown-item" href="{{ action('AdminController@showUsers') }}"><i class="fas fa-user"></i>  Usuarios</a>
                                 <a class="dropdown-item" href="{{ action('AdminController@showMessages') }}"><i class="fas fa-question-circle"></i>  Buzón</a>
                             </div>
                         </div>          

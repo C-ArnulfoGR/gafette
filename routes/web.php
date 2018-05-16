@@ -48,13 +48,16 @@ Route::patch('/post/edit/{post}', 'BasicController@updatePost')
 Route::get('/post/delete/{post}', 'AdminController@deletePost')
     ->name('post.delete');
 
+Route::get('/user/userslist', 'AdminController@showUsers')
+    ->name('user.userslist');
+
 Route::get('/mailbox/messageslist', 'AdminController@showMessages')
     ->name('mailbox.messageslist');
 
 Route::post('/mailbox/answerMessage', 'BasicController@answerMessage')
     ->name('mailbox.answerMessage');
 
-// Faltan de Refactorizars
+// Faltan de Refactorizar
 Route::get('/post/create', function () {
     $title = 'Publicaciones';
     return view('post.create', compact('title'));

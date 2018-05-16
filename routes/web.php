@@ -43,8 +43,7 @@ Route::post('/fileUpload', 'BasicController@fileUpload')
     ->middleware(['auth', 'role:admin,manager']);
 
 Route::post('/sendMessage', 'BasicController@sendMessage')
-    ->name('sendMessage')
-    ->middleware(['auth', 'role:admin,comm,manager']);
+    ->name('sendMessage');
 
 Route::get('/login', 'AdminController@login')
     ->name('login');

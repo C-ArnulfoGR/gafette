@@ -34,15 +34,15 @@
 </div>
 
 <div class="row">
-	
+	<div class="col12 col-md-9">
 	@foreach($posts as $post)
 	<div class="col-md-3 mt-3"> 
 		<div class="card text-white bg-dark" style="width: 15rem; border-radius: 20px;">
 			<div class="text-center" style="margin-top: 5px;">
 				<h5> <span class="badge"> {{ $post->title }} </span> </h5>
 			</div>
-			<a href="#"> 
-				<img class="card-img-top" src="/images/{{ $post->image }}" alt="Card image cap"> 
+			<a class="row" href="#">
+				<img class="card-img-top img-fluid" src="/images/{{ $post->image }}" alt="Card image cap">
 			</a>
 			<div class="card-body" style="margin-top: 5px;">
 				<p class="card-text"> 
@@ -53,6 +53,7 @@
 		</div>
 	</div>
 	@endforeach
+	</div>
 
 	@foreach($posts as $post)
 	<div class="modal fade" id="modalQuickView{{ $post->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -15,7 +15,6 @@ class CheckRole
      */
     public function handle($request, Closure $next, ...$roles)
     {
-//        dd($request->user()->hasAnyRole($roles));
         if (! $request->user()->hasAnyRole($roles)) {
             return redirect(route('admin.index'));
         }

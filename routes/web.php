@@ -60,6 +60,9 @@ Route::get('/post/delete/{post}', 'AdminController@deletePost')
     ->name('post.delete')
     ->middleware(['auth', 'role:admin,manager']);
 
+Route::get('/user/userslist', 'AdminController@showUsers')
+    ->name('user.userslist');
+
 Route::get('/mailbox/messageslist', 'AdminController@showMessages')
     ->name('mailbox.messageslist')
     ->middleware(['auth', 'role:admin,comm,manager']);
@@ -68,7 +71,7 @@ Route::post('/mailbox/answerMessage', 'BasicController@answerMessage')
     ->name('mailbox.answerMessage')
     ->middleware(['auth', 'role:admin,comm,manager']);
 
-// Faltan de Refactorizars
+// Faltan de Refactorizar
 Route::get('/post/create', function () {
     $title = 'Publicaciones';
     return view('post.create', compact('title'));

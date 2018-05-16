@@ -87,8 +87,7 @@
 						</div>
 
 						<div class="md-form">
-							<i class="fas fa-user prefix grey-text"></i>
-							<input type="text" id="author" name="author" class="form-control" value="{{ old('author', $post->author) }}">
+							<input type="hidden" id="author" name="author" class="form-control" value="{{ old('author', $post->author) }}">
 							{{-- <label for="body" class="font-weight-light">Autor</label> --}}
 						</div>
 

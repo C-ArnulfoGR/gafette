@@ -7,7 +7,6 @@ use App\Role;
 use App\Basic;
 use App\Post;
 use App\Message;
-use App\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -76,7 +75,21 @@ class AdminController extends Controller
         $post->update([
             'active' => '0',
         ]);
-        return redirect()->route('post.postslist', ['post' => $post]);
+        return redirect()->route('post.postslist');
+    }
+
+    public function deleteMessage(Message $message)
+    {
+        $message->update([
+            'active' => '0',
+        ]);
+        return redirect()->route('mailbox.messageslist');
+    }
+
+    public function deleteUser(User $user)
+    {
+        $user->delete();
+        return redirect()->route('user.userslist');
     }
 
     public function showUsers(User $users) 
@@ -89,8 +102,24 @@ class AdminController extends Controller
     public function showMessages()
     {
         $title = 'Buzon';
-        $messages = Message::paginate(10);
+        $messages = Message::where('active', true)->paginate(10);
         return view('mailbox.messageslist', compact('title', 'messages'));
+    }
+
+    public function createUser(Request $data)
+    {
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+        ]);
+
+        $user
+            ->roles()
+            ->attach(Role::where('name', $data['rol'])->first() );
+
+        return redirect()->route('user.userslist');
+
     }
 
 }

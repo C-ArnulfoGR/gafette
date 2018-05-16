@@ -23,6 +23,7 @@ class Message extends Model
         'email',
         'subject',
         'message_body',
+        'active',
     ];
     
 }

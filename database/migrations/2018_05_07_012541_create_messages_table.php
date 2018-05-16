@@ -19,6 +19,7 @@ class CreateMessagesTable extends Migration
             $table->string('email', 100);
             $table->string('subject', 100);
             $table->text('message_body');
+            $table->boolean('active')->default(false);
             $table->timestamps();
         });
     }

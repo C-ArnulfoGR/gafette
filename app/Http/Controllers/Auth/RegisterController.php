@@ -52,6 +52,7 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'rol' => 'required',
         ]);
     }
 
@@ -61,8 +62,11 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    public function create(array $data)
     {
+        dd($data);
+
+        /*
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -71,8 +75,9 @@ class RegisterController extends Controller
 
         $user
             ->roles()
-            ->attach(Role::where('name', 'comm')->first() );
+            ->attach(Role::where('name', $data['rol'])->first() );
 
         return $user;
+        */
     }
 }

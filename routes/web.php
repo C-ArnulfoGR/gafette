@@ -60,8 +60,17 @@ Route::get('/post/delete/{post}', 'AdminController@deletePost')
     ->name('post.delete')
     ->middleware(['auth', 'role:admin,manager']);
 
+Route::get('/mailbox/delete/{message}', 'AdminController@deleteMessage')
+    ->name('message.delete')
+    ->middleware(['auth', 'role:admin,manager,comm']);
+
+Route::get('/user/delete/{user}', 'AdminController@deleteUser')
+    ->name('user.delete')
+    ->middleware(['auth', 'role:admin']);
+
 Route::get('/user/userslist', 'AdminController@showUsers')
-    ->name('user.userslist');
+    ->name('user.userslist')
+    ->middleware(['auth', 'role:admin']);
 
 Route::get('/mailbox/messageslist', 'AdminController@showMessages')
     ->name('mailbox.messageslist')
@@ -80,4 +89,9 @@ Route::get('/post/create', function () {
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/user/register', 'AdminController@createUser')
+    ->name('user.register')
+    ->middleware(['auth', 'role:admin']);
+
+
+Route::get('/home', 'AdminController@index')->name('home');

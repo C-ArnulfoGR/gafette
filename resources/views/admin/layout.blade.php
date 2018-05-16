@@ -29,6 +29,37 @@
                 }
             });
         }
+
+        function deleteConfirmMessage(message_id) {
+            swal({
+                title: "De verdad deseas eliminar este mensaje?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                if(willDelete) {
+                    location.href = "{!! url('/mailbox/delete/{message}') !!}".replace("{message}", message_id);
+                    swal("Exito!", "Mensaje eliminado!", "success")
+                }
+            });
+        }
+
+        function deleteConfirmUser(user_id) {
+            swal({
+                title: "De verdad deseas eliminar este Usuario?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                if(willDelete) {
+                    location.href = "{!! url('/user/delete/{user}') !!}".replace("{user}", user_id);
+                    swal("Exito!", "Usuario eliminado!", "success")
+                }
+            });
+        }
+
     </script>
 
     <title>@yield('title') - Gafette</title>

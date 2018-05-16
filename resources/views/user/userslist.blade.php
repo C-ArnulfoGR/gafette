@@ -40,7 +40,11 @@
 							<td align="center"> 
 								<button type="button" class="btn btn-outline-success waves-effect btn-sm my-0" data-toggle="modal" data-target=""> <i class="fas fa-pencil"></i> Editar </button>
 
-								<button class="btn btn-outline-danger waves-effect btn-sm my-0"> <i class="fas fa-times"></i> Eliminar</button>
+								@if($user->hasRole('admin'))
+								<button class="btn disabled btn-outline-light waves-effect btn-sm my-0" disabled> <i class="fas fa-times"></i> Eliminar</button>
+								@else
+								<button class="btn btn-outline-danger waves-effect btn-sm my-0" onclick="return deleteConfirmUser('{{ $user->id }}')"> <i class="fas fa-times"></i> Eliminar</button>
+									@endif
 							</td>
 						</tr>
 						@endforeach
@@ -62,8 +66,8 @@
                 </button>
             </div>
             <div class="modal-body">
-            	<form role="form" autocomplete="off" method="POST" action="#">
-            		{{-- {!! csrf_field() !!} --}}
+            	<form me role="form" autocomplete="off" method="POST" action="{{ route('user.register') }}">
+            		{!! csrf_field() !!}
 	                <div class="md-form">
 	                    <i class="fas fa-at prefix"></i>
 	                    <input type="text" id="name" name="name" class="form-control" required="" placeholder="Nombre usuario:">
@@ -83,11 +87,11 @@
 	                </div>
 					
 					<div class="md-form">
-		                <select class="custom-select" >
+		                <select class="custom-select" name="rol">
 		                	<option value="" selected>Tipo usuario - elegir</option>
-		                	<option value="1">Option 1</option>
-		                	<option value="2">Option 2</option>
-		                	<option value="3">Option 3</option>
+		                	<option value="admin">Admnistrador</option>
+		                	<option value="manager">Gerente</option>
+		                	<option value="comm">Atencion a clientes</option>
 					    </select>
 					</div>
 

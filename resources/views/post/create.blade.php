@@ -73,13 +73,7 @@
                         
                         <div class="form-group row">
                             <div class="col-lg-12 input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fab fa-twitter"></i></span>
-                                </div>
-                                <input class="form-control" type="text" placeholder="Autor del post"  id="author" name="author" value="">
-                                <div class="input-group-append">
-                                    <span class="input-group-text"><i class="fas fa-asterisk"></i></span>
-                                </div>
+                                <input class="form-control" type="hidden" placeholder="Autor del post"  id="author" name="author" value="{{ Auth::user()->id }}">
                             </div>
                         </div>
 

@@ -28,7 +28,7 @@
 
 								<button type="button" class="btn btn-outline-success waves-effect btn-sm my-0" data-toggle="modal" data-target="#modalMessageAnswer{{ $message->id }}"> <i class="fas fa-comment"></i> Responder </button>
 
-								<button class="btn btn-outline-danger waves-effect btn-sm my-0"> <i class="fas fa-times"></i> Eliminar</button>
+								<button class="btn btn-outline-danger waves-effect btn-sm my-0" onclick="return deleteConfirmMessage('{{ $message->id }}')"> <i class="fas fa-times"></i> Eliminar</button>
 							</td>
 						</tr>
 						@endforeach

@@ -8,30 +8,6 @@
 
 
 @section('content')
-<div class="row"> 
-	<div class="col-md-4"></div>
-
-	<hr>
-	<div class="col-md-4">
-		<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-			<div class="card-header text-center">Página de administración</div>
-			<div class="card-body" style="margin: 0 auto;">
-				<a class="btn btn-primary alert-secondary alert-link" href="{{ url('/admin') }}"><i class="fas fa-cog"></i> Click Aquí</a>
-			</div>
-		</div>
-	</div>
-	
-	<hr>
-	<div class="col-md-4">
-		<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-			<div class="card-header text-center">Página de login</div>
-			<div class="card-body" style="margin: 0 auto;">
-				<a class="btn btn-primary alert-secondary alert-link" href="{{ url('/login') }}"><i class="fas fa-user"></i> Click Aquí</a>
-			</div>
-		</div>
-	</div>
-	
-</div>
 
 <div class="row">
 	<div class="col12 col-md-9">
@@ -41,7 +17,7 @@
 			<div class="text-center" style="margin-top: 5px;">
 				<h5> <span class="badge"> {{ $post->title }} </span> </h5>
 			</div>
-			<a class="row" href="#">
+			<a class="" href="#">
 				<img class="card-img-top img-fluid" src="/images/{{ $post->image }}" alt="Card image cap">
 			</a>
 			<div class="card-body" style="margin-top: 5px;">
@@ -84,7 +60,7 @@
 									{{ $post->body }}
 								</p>
 								<p>
-									Autor: <strong> Autor </strong>, Fecha: 
+									Autor: <strong> {{App\User::find($post->id)->name}} </strong>, Fecha:
 									{{ substr($post->updated_at, 0, strlen($post->updated_at) - 9) }}
 								</p>
 							</div>

@@ -74,6 +74,7 @@
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ route('about_us') }}"><i class="fas fa-question-circle"></i>  Acerca de...</a>
                                 <a class="dropdown-item" href="{{ route('contact_us') }}"><i class="fas fa-phone-square"></i> Contactános</a>
+                                <a class="dropdown-item" href="{{ url('/admin') }}"><i class="fas fa-cog"></i>Administración</a>
                             </div>
                         </div>          
                     </div>

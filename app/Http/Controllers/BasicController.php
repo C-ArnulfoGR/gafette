@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Basic;
 use App\Post;
+use App\User;
 use App\Message;
 use App\AnswerMessages;
 use Illuminate\Http\Request;
@@ -67,7 +68,7 @@ class BasicController extends Controller
 
         $post->update($data);
 
-        return redirect()->route('post.postslist', ['post' => $post]);
+        return redirect()->route('post.postslist');
     }
 
     public function sendMessage(Request $request) 
@@ -84,6 +85,7 @@ class BasicController extends Controller
             'email' => $request['email'],
             'subject' => $request['subject'],
             'message_body' => $request['message_body'],
+            'active' => true,
         ]);
 
         return redirect()->route('contact_us');

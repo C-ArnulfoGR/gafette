@@ -10,7 +10,14 @@
 	{!! Html::script('assets/js/popper.min.js') !!}
 	{!! Html::script('assets/js/bootstrap.min.js') !!}
 	{!! Html::script('assets/js/all.js') !!}
+	{!! Html::script('assets/js/sweetalert.js') !!}
 	{!! Html::style('css/login.css') !!}
+
+	<script>
+		function changeRoute() {
+			location.href = '{{ route('index') }}';
+        }
+	</script>
 </head>
 <body>
 	<div class="container">

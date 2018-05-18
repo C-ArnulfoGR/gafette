@@ -14,7 +14,7 @@
 							<th>#</th>
 							<th>Correo</th>
 							<th>Asunto</th>
-							<th>Configuración</th>
+							<th align="center">Configuración</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -91,8 +91,10 @@
             		{!! csrf_field() !!}
 	                <div class="md-form">
 	                    <i class="fas fa-envelope prefix"></i>
-	                    <input type="email" id="community_email" name="community_email" class="form-control" required="" placeholder="De: Correo community manager">
+	                    <input type="hidden" id="community_email" name="community_email" class="form-control" required="" placeholder="De: Correo community manager" value="{{ Auth::user()->email }}">
+						<input type="email" class="form-control" required="" placeholder="De: Correo community manager" value="{{ Auth::user()->email }}" disabled>
 	                    {{-- <label for="materialFormNameModalEx1">Your name</label> --}}
+
 	                </div>
 
 	                <div class="md-form">

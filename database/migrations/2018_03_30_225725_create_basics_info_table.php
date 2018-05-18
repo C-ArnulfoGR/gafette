@@ -17,7 +17,7 @@ class CreateBasicsInfoTable extends Migration
         Schema::create('basics_info', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id')->nullable(); //usuario que modifica
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->string('sitio');
             $table->string('link_fb');
             $table->string('link_tw');

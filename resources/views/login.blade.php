@@ -5,7 +5,7 @@
 @section('content')
 <div class="login-wrap">
 	<div class="login-html">
-		<div class="text-center" style="margin-bottom: 20px;"> <h1 class="display-6"> GafetteEE </h1> </div>
+		<div class="text-center" style="margin-bottom: 20px;"> <h1 class="display-6"> Gafette </h1> </div>
 		<input id="tab-1" type="radio" name="tab" class="sign-in"><label for="tab-1" class="tab">Login</label>
 		<div class="login-form">
 			<div class="sign-in-htm text-center">
@@ -23,7 +23,7 @@
 						<div class="col-md-6 offset-md-4">
 							<div class="checkbox">
 								<label>
-									<input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Recuerdame') }}
+									<input class="custom-checkbox" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Recuerdame') }}
 								</label>
 							</div>
 						</div>
@@ -34,8 +34,8 @@
 							<button type="submit" class="btn button btn-primary"><i class="fas fa-check-circle"></i> Iniciar sesión </button>
 						</div>
 						<div class="col-md-12">
-							<button type="button" class="btn button btn-danger" onclick="alert('Regresando...');"><i class="fas fa-angle-left"></i>
-							Regresar</button>
+							<a class="btn button btn-danger" href="{{ route('index') }}"><i class="fas fa-angle-left"></i>
+							Regresar</a>
 						</div>
 					</div>
 				</form>

@@ -161,6 +161,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * SwettAlert Service Providers
+         */
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
     ],
 
     /*
@@ -211,6 +215,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'HTML' => Collective\Html\HtmlFacade::class,
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
 
     ],
 

@@ -11,12 +11,13 @@
     {!! Html::script('assets/js/bootstrap.min.js') !!}
     {!! Html::script('assets/css/MDB/js/mdb.min.js') !!}
     {!! Html::script('assets/js/all.js') !!}
+    {!! Html::script('assets/js/sweetalert.js') !!}
     {!! Html::style('css/layout.css') !!}
 
     <title>@yield('title') - @yield('sitio')</title>
 </head>
 <body>
-
+    @include('sweetalert::alert')
     <div class="fixed-top">
         <header class="topbar">
             <div class="container">
@@ -57,7 +58,7 @@
         </nav>
     </div>
 
-    <div class="container" style="margin-top: 100px; margin-bottom: 5%;">
+    <div class="container" style="margin-top: 100px; margin-bottom: 10%;">
         @yield('content')
     </div>
 
@@ -72,9 +73,9 @@
                                 <span class="sr-only">Opciones del menú</span>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ route('about_us') }}"><i class="fas fa-question-circle"></i>  Acerca de...</a>
+                                <a class="dropdown-item" href="{{ route('about_us') }}"><i class="fas fa-question-circle"></i> Acerca de...</a>
                                 <a class="dropdown-item" href="{{ route('contact_us') }}"><i class="fas fa-phone-square"></i> Contactános</a>
-                                <a class="dropdown-item" href="{{ url('/admin') }}"><i class="fas fa-cog"></i>Administración</a>
+                                <a class="dropdown-item" href="{{ url('/admin') }}"><i class="fas fa-cog"></i> Administración</a>
                             </div>
                         </div>          
                     </div>

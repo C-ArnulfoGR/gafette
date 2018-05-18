@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Alert;
 use App\Basic;
 use App\Post;
 use App\User;
@@ -14,7 +15,7 @@ class BasicController extends Controller
     public function index()
     {
         $data = Basic::all()->last();
-        $posts = Post::where('active', true)->paginate(12);
+        $posts = Post::where('active', true)->paginate(8);
         return view('index', compact('data', 'posts'));
     }
 
@@ -54,6 +55,8 @@ class BasicController extends Controller
            'active' => true,
         ]);
 
+        alert()->success('Exito!', 'Post creado.')->persistent('Ok');
+
         return back()->with('success', 'Publicacion creada correctamente.');
     }
 
@@ -67,6 +70,8 @@ class BasicController extends Controller
         ]);
 
         $post->update($data);
+
+        alert()->success('Exito!', 'Post actualizado correctamente.')->autoClose(2000);
 
         return redirect()->route('post.postslist');
     }
@@ -88,6 +93,8 @@ class BasicController extends Controller
             'active' => true,
         ]);
 
+        alert()->success('Exito!', 'Mensaje enviado.')->persistent('Ok.');
+
         return redirect()->route('contact_us');
     }
 
@@ -104,6 +111,8 @@ class BasicController extends Controller
             'answer_body' => $request['answer_body'],
             'message_id' => $request['message_id'],
         ]);
+
+        alert()->success('Exito!', 'Respuesta enviada.')->autoClose(2000);
 
         return redirect()->route('mailbox.messageslist');
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Alert;
 use Closure;
 
 class CheckRole
@@ -15,7 +16,10 @@ class CheckRole
      */
     public function handle($request, Closure $next, ...$roles)
     {
-        if (! $request->user()->hasAnyRole($roles)) {
+        if (!$request->user()->hasAnyRole($roles)) {
+            alert()
+                ->error('Error!', 'No tienes los permisos necesarios para ingresar a esta sección.')
+                ->persistent('Cerrar');
             return redirect(route('admin.index'));
         }
         return $next($request);

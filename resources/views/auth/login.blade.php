@@ -21,10 +21,9 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Recuerdame') }}
-                                    </label>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                                    <label class="custom-control-label" for="remember">{{ __('Recuerdame') }}</label>
                                 </div>
                             </div>
                         </div>
@@ -34,7 +33,7 @@
                                 <button type="submit" class="btn button btn-primary"><i class="fas fa-check-circle"></i> Iniciar sesión </button>
                             </div>
                             <div class="col-md-12">
-                                <button type="button" class="btn button btn-danger" onclick="alert('Regresando...');"><i class="fas fa-angle-left"></i>
+                                <button type="button" class="btn button btn-danger" onclick="changeRoute();"> <i class="fas fa-angle-left"> </i>
                                     Regresar</button>
                             </div>
                         </div>

@@ -39,7 +39,7 @@
                     <h4 class="mb-0">...</h4>
                 </div>
                 <div class="card-body">
-                    {!! Form::open(array('route' => 'fileUpload','enctype' => 'multipart/form-data')) !!}
+                    {!! Form::open(array('route' => 'fileUpload', 'enctype' => 'multipart/form-data')) !!}
                         <div class="form-group row">
                             <div class="col-lg-12 input-group">
                                 {!! Form::file('image', array('class' => 'image')) !!}

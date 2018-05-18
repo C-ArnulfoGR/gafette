@@ -54,6 +54,8 @@ class AdminController extends Controller
             'biography' => $data['biography'],
         ]);
 
+        alert()->success('Exito!', 'Configuración actualizada.')->autoClose(2000);
+
         return redirect()->route('admin.basic');
     }
 
@@ -116,7 +118,9 @@ class AdminController extends Controller
 
         $user
             ->roles()
-            ->attach(Role::where('name', $data['rol'])->first() );
+            ->attach(Role::where('name', $data['rol'])->first());
+
+        alert()->success('Exito!', 'Usuario correctamente.')->autoClose(2000);
 
         return redirect()->route('user.userslist');
 

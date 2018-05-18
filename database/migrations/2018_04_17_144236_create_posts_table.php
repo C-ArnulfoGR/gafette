@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->text('body');
             $table->text('image')->nullable();
             $table->unsignedInteger('author')->nullable();
-            $table->foreign('author')->references('id')->on('users');
+            $table->foreign('author')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->boolean('active')->default(false);
             $table->timestamps();
         });

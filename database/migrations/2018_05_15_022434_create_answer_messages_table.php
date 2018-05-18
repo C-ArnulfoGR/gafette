@@ -18,7 +18,7 @@ class CreateAnswerMessagesTable extends Migration
             $table->string('community_email', 100);
             $table->text('answer_body');
             $table->unsignedInteger('message_id');
-            $table->foreign('message_id')->references('id')->on('messages');
+            $table->foreign('message_id')->references('id')->on('messages')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

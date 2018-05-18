@@ -18,14 +18,16 @@
         function deleteConfirmPost(post_id) {
             swal({
                 title: "De verdad deseas eliminar este post?",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if(willDelete) {
+                text: "Después no podrás revertir los cambios!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, eliminar!'
+            }).then((result) => {
+                if (result.value) {
+                    swal('Exito!', 'Post eliminado.', 'success');
                     location.href = "{!! url('/post/delete/{post}') !!}".replace("{post}", post_id);
-                    swal("Exito!", "Post eliminado!", "success")
                 }
             });
         }
@@ -33,38 +35,43 @@
         function deleteConfirmMessage(message_id) {
             swal({
                 title: "De verdad deseas eliminar este mensaje?",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-                .then((willDelete) => {
-                if(willDelete) {
+                text: "Después no podrás revertir los cambios!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, eliminar!'
+            }).then((result) => {
+                if (result.value) {
+                    swal('Exito!', 'Usuario eliminado.', 'success');
                     location.href = "{!! url('/mailbox/delete/{message}') !!}".replace("{message}", message_id);
-                    swal("Exito!", "Mensaje eliminado!", "success")
                 }
             });
         }
 
         function deleteConfirmUser(user_id) {
             swal({
-                title: "De verdad deseas eliminar este Usuario?",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-                .then((willDelete) => {
-                if(willDelete) {
+                title: "De verdad deseas eliminar este usuario?",
+                text: "Después no podrás revertir los cambios!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, eliminar!'
+            }).then((result) => {
+                if (result.value) {
+                    swal('Exito!', 'Usuario eliminado.', 'success');
                     location.href = "{!! url('/user/delete/{user}') !!}".replace("{user}", user_id);
-                    swal("Exito!", "Usuario eliminado!", "success")
                 }
             });
         }
-
     </script>
 
     <title>@yield('title') - Gafette</title>
 </head>
 <body>
+    @include('sweetalert::alert')
+
     <div class="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
             <div class="container">
@@ -106,13 +113,20 @@
         </nav>
     </div>
 
-    <div class="container" style="margin-top: 100px; margin-bottom: 5%;">
+    <div class="container" style="margin-top: 100px; margin-bottom: 10%;">
         @yield('content')
     </div>
 
+    <div class="container">
+        <div class="row"><hr></div>
+        <div class="row"><hr></div>
+        <div class="row"><hr></div>
+    </div>
+    
     <div class="">
         <footer class="footer-wrap">
             <div class="container">
+
                 <div class="row">
                     <div class="col-md-4 col-sm-6">
                         <div class="btn-group dropup">
@@ -123,9 +137,9 @@
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ action('AdminController@index') }}"><i class="fas fa-star"></i>  Inicio</a>
                                 <a class="dropdown-item" href="{{ action('AdminController@basic') }}"><i class="fas fa-cog"></i> Configuración Básica</a>
-                                <a class="dropdown-item" href="{{ action('AdminController@showPosts') }}"><i class="fas fa-globe"></i>  Publicaciones</a>
-                                <a class="dropdown-item" href="{{ action('AdminController@showUsers') }}"><i class="fas fa-user"></i>  Usuarios</a>
-                                <a class="dropdown-item" href="{{ action('AdminController@showMessages') }}"><i class="fas fa-question-circle"></i>  Buzón</a>
+                                <a class="dropdown-item" href="{{ action('AdminController@showPosts') }}"><i class="fas fa-globe"></i> Publicaciones</a>
+                                <a class="dropdown-item" href="{{ action('AdminController@showUsers') }}"><i class="fas fa-user"></i> Usuarios</a>
+                                <a class="dropdown-item" href="{{ action('AdminController@showMessages') }}"><i class="fas fa-envelope"></i>  Buzón</a>
                             </div>
                         </div>          
                     </div>
